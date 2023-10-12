@@ -1,0 +1,51 @@
+############################# NOTA #################################
+	Ho creato questo file con l'unico scopo di evitare
+	collisioni con GRAFO.md in fase di push sulla
+	repository. Questo file e GRAFO.md sono da
+	considerarsi come un unico file.
+####################################################################
+
+Gli obbiettivi di notazione che hai ideato sono complessi, penso che dovremmo
+sfruttare il più possibile LaTeX per realizzarli e lavorare su due fronti.
+
+- Fasi del file -
+	  Latex Sorgente
+		||
+		||	conversione
+		\/
+	    Iperlatex 	(latex con i riferimenti, detto anche itex)
+		||
+		||	compilazione
+		\/
+	    Ipertesto 	(testo finale in html, pdf etc...)
+
+- Soluzioni -
+
+( Problema Notazioni )
+Come dicevi tu in GRAFO.md, nella base di dati le operazioni e i simboli possono diventare 
+oggetti come tutto il resto, nel file itex il Convertitore specifica quale notazione dovrà 
+essere usata attraverso un comando Latex.
+La parte critica è riconoscere le notazione nel passaggio da sorgente a itex, l'approccio
+che mi viene in mente è di usare un comando che definisca la notazione all'interno del file.
+A quel punto il convertitore ogni volta che incontrerà quella notazione saprà che è associata
+a un determinato oggetto (nella maggior parte dei casi un operatore).
+Esempio:
+[LATEX]
+	\definenotation{scalar_product}{<}{|}{>} %alias per la notazione usato in questo file%
+	\usenotation{scalar_product}{<}{,}{>}	 %notazione da usare nel file finale%
+	...
+	$ v1 = <v2|v3> $
+
+[ITEX]
+	\usenotation{scalar_product}{<}{,}{>}
+	...
+	\ref{scalar_product}
+
+[IPERTEXT]
+	v1 = < v2 , v3 >	
+	
+( Problema delle variabili )
+Eh questo si so cazzi, al momento l'unica opzione che mi viene in mente è di sfruttare un
+approccio simile al ( Problema Notazioni ), e magari trasformare le variabili in argomenti
+che vengono passati al teorema o alla dimostrazione.
+
