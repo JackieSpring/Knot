@@ -5,6 +5,29 @@
 	considerarsi come un unico file.
 ####################################################################
 
+Il software Knot si pone di tradurre un file latex in un ipertesto, dove:
+
+    Ipertesto
+        è un file contenente riferimenti statici e interattivi ad altre componenti
+        dello steso file e/o da altri file, dove questi componenti sono condivisi attraverso uno o piu file.
+    
+    Componente
+        è una stringa referenziata da più file la cui formattazione e grafica varia a seconda del linguaggio
+        di ipertesto che la referenzia, ma il suo contenuto rimane invarianto e uguale attraverso tutti i file.
+        Un componente può contenere e/o essere formato da più componenti eccetto se stesso o altri componenti
+        che lo contengono.
+
+A livello estensionale un ipertesto può essere un file pdf o un file html o un file latex.
+Prima di raggiungere questo stadio il file latex sorgente deve essere convertito in un file hyperTeX, 
+ovvero un file latex che contiene i riferimenti ai componenti, interpretabili da Knot, che dovranno tradotti 
+nel linguaggio dell'ipertesto finale.
+
+	Latex ---(converti)--> hyperLatex ---(compila)---> Hypertext
+
+Da ora chiamerò Latex o sorgente il file prima della conversione, hyperLatex o hypertex o itex il file dopo 
+la conversione e ipertesto il file dopo la compilazione. Le capacità espressive dell'ipertesto saranno
+limitate dallo standard o linguaggio impegati nell'ipertesto.
+
 Gli obbiettivi di notazione che hai ideato sono complessi, penso che dovremmo
 sfruttare il più possibile LaTeX per realizzarli e lavorare su due fronti.
 
