@@ -62,3 +62,25 @@ L'utilità di ref: .... è che per richiamare la definizione spazio vettoriale �
 Noi umani scriveremmo due lettere diverse oppure associeremmo un numero ad esempio A_1, A_2 beh notazione dovrebbe poter gestire queste cose o averle nella configurazione.
 
 Concettualmente tutto è un oggetto come gli oggetti di programmazione, le struct dentro un file oltre che essere possibilmente visualizzabili hanno delle proprietà e dei metodi interni. Ad esempio voglio trattare una tematica che usa definizioni e terminologie che non voglio siano presenti esplicitamente nel file, allora richiamo tutte le struct di cui ho bisogno e le imposto a seconda della mia utilità. Di base se importo la definizione di spazio vettoriale allora nel file ogni volta che compare il pattern Sia A spazio vettoriale deve essere possibile unire la parola spazio vettoriale con la definizione e dentro il contesto il pattern A rappresenta uno spazio vettoriale quindi anch'esso si ricollega alla definizione.
+
+Definisco bene le diverse strutture:
+
+[Teorema]
+    composto da un unico nome (poi definiremo gli alias che riportano a questo unico nome) e da una formulazione teorema o più
+
+[Lemma, Formulazione teorema, Corollario]
+    Composto da un unico enunciato e da una dimostrazione o più, può avere un nome
+(Un enunciato presenta ipotesi e tesi, nelle ipotesi sono contenute anche informazioni sull'ambiente e sugli oggetti su cui si lavora)
+
+[Notazione]
+    Composto da un pattern contenuto tra: _, ad esempio _b(v,w)_ e da un rappresentante $< , >$. Deve permettere di riconoscere espressioni ad esempio se scrivo _b(v+w,a)_ deve poi visualizzare $<v+w,a>$, le espressioni le possiamo numerare come argomenti necessari del pattern ad esempio _b($0,$1)_ per poi essere usati: _b()_{$0=v+w,$1=a} che verrà visualizzato come $<v+w,a>$. Questi sono esempi poi come passare gli argomenti lo facciamo meglio.
+
+[Definizione]
+    Composto da un nominativo e da una notazione che rappresenta l'oggetto.
+
+[Proprietà banale, Proprietà assiomatica, Osservazione]
+    Composti da un testo e richiama degli oggetti di definizione, dove nel testo si esplicitano le proprietà che possiede quell'oggetto (con magari certe condizione) derivate da un teorema o un lemma o in maniera assiomatica o semplicemente un'osservazione quindi derivate dalla stessa osservazione.
+
+[Assioma]
+    Composto da delle ipotesi e un'affermazione che vale assiomaticamente.
+
